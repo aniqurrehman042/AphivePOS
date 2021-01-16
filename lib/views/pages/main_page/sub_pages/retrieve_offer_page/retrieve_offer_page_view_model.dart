@@ -1,11 +1,11 @@
-import 'package:aphive_pos/data/models/offer.dart';
+import 'package:aphive_pos/data/models/order.dart';
 
 class RetrieveOfferPageViewModel {
-  Offer offer = Offer(
-    offerName: 'Offer Name',
-    offerDescription: 'Offer Description',
+  Order offer = Order(
+    orderName: 'Offer Name',
+    orderDescription: 'Offer Description',
     quantity: 'Quantity',
-    offerValue: 'Offer Value',
+    orderValue: 'Offer Value',
     fulfillmentPeriod: 'Fulfillment Period',
     refundableStatus: 'Refundable Status',
     username: 'Username',

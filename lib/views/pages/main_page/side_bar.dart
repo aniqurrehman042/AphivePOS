@@ -67,6 +67,20 @@ class SideBar extends StatelessWidget {
               ),
             ],
           ),
+
+          Expanded(child: SizedBox()),
+
+          /// POS ID Text
+          Padding(
+            padding: EdgeInsets.only(
+              left: 60.w,
+              bottom: 120.r,
+            ),
+            child: Text(
+              'POS ID: ABC12345XYZ',
+              style: AppTextStyles.getLogoStyle().copyWith(fontSize: 36.nsp),
+            ),
+          ),
         ],
       ),
     );

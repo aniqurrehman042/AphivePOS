@@ -1,17 +1,17 @@
-class Offer {
-  String offerName;
-  String offerDescription;
+class Order {
+  String orderName;
+  String orderDescription;
   String quantity;
-  String offerValue;
+  String orderValue;
   String fulfillmentPeriod;
   String refundableStatus;
   String username;
 
-  Offer({
-    this.offerName,
-    this.offerDescription,
+  Order({
+    this.orderName,
+    this.orderDescription,
     this.quantity,
-    this.offerValue,
+    this.orderValue,
     this.fulfillmentPeriod,
     this.refundableStatus,
     this.username,

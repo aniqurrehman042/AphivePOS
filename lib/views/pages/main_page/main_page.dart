@@ -57,9 +57,9 @@ class MainPage extends StatelessWidget {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              /// Retrieve Offer Button
+                              /// Retrieve Order Button
                               DefaultButton(
-                                title: "Retrieve Offer",
+                                title: "Retrieve Order",
                                 color: lightBlue,
                                 onTap: () {
                                   showDialog(
@@ -72,12 +72,12 @@ class MainPage extends StatelessWidget {
                                         showDialog(
                                           context: context,
                                           builder: (context) => DialogUtils
-                                              .getRetrieveOfferDialog(
+                                              .getRetrieveOrderDialog(
                                             context: context,
                                             onGo: () {
                                               Navigator.of(context).pop();
                                               _mainPageCubit.switchPage(
-                                                  RetrieveOfferPage.tag);
+                                                  RetrieveOrderPage.tag);
                                             },
                                             onScanQr: () {
                                               Navigator.of(context).pop();
@@ -155,7 +155,7 @@ class MainPage extends StatelessWidget {
                 child: GestureDetector(
                   onTap: () {
                     _mainPageCubit.switchPageAndScan(
-                      pageTag: RetrieveOfferPage.tag,
+                      pageTag: RetrieveOrderPage.tag,
                       isScan: false,
                     );
                   },
@@ -185,8 +185,8 @@ class MainPage extends StatelessWidget {
         return HomePage();
       case OffersPage.tag:
         return OffersPage();
-      case RetrieveOfferPage.tag:
-        return RetrieveOfferPage();
+      case RetrieveOrderPage.tag:
+        return RetrieveOrderPage();
       case RewardPointsPage.tag:
         return RewardPointsPage();
       case ReceivePaymentPage.tag:

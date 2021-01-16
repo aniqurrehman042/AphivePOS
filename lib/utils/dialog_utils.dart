@@ -157,7 +157,7 @@ class DialogUtils {
     );
   }
 
-  static Widget getRetrieveOfferDialog({
+  static Widget getRetrieveOrderDialog({
     BuildContext context,
     void Function() onGo,
     void Function() onScanQr,
@@ -177,9 +177,9 @@ class DialogUtils {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            /// Retrieve offer heading
+            /// Retrieve order heading
             Text(
-              'Retrieve offer',
+              'Retrieve order',
               textAlign: TextAlign.center,
               style: TextStyle(
                 fontSize: 52.nsp,
@@ -195,11 +195,11 @@ class DialogUtils {
               ),
               decoration: AppDecorations.getRoundedGreyShapeDecoration(),
 
-              /// Offer ID Text Field
+              /// order ID Text Field
               child: TextField(
                 keyboardType: TextInputType.text,
                 decoration: AppDecorations.getNoBorderInputDecoration(
-                    hint: 'Enter offer ID'),
+                    hint: 'Enter order ID'),
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 30.nsp,
@@ -298,7 +298,7 @@ class DialogUtils {
   }
 
   static Widget getEditQuantityDialog(
-      {BuildContext context, String offerName, void Function() onExit}) {
+      {BuildContext context, String orderName, void Function() onExit}) {
     return Dialog(
       child: Container(
         width: MediaQuery.of(context).size.width * 0.35,
@@ -314,7 +314,7 @@ class DialogUtils {
           children: [
             /// Message Text
             Text(
-              offerName,
+              orderName,
               textAlign: TextAlign.center,
               style: AppTextStyles.getNormalTextStyle(),
             ),

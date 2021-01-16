@@ -23,7 +23,7 @@ class BorderedTextField extends StatelessWidget {
       ),
       decoration: AppDecorations.getRoundedBorderShapeDecoration(),
 
-      /// From Text Field
+      /// Text Field
       child: Center(
         child: TextField(
           keyboardType: inputType,

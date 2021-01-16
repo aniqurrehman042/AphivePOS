@@ -9,8 +9,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';
 import 'package:get/get.dart';
 
-class RetrieveOfferPage extends StatelessWidget {
-  static const tag = 'RetrieveOfferPage';
+class RetrieveOrderPage extends StatelessWidget {
+  static const tag = 'RetrieveOrderPage';
 
   final RetrieveOfferPageViewModel _retrieveOfferPageViewModel = Get.find();
   final MainPageCubit _mainPageCubit = Get.find();
@@ -58,7 +58,7 @@ class RetrieveOfferPage extends StatelessWidget {
           /// Offer Details
           /// Offer Name
           Text(
-            _retrieveOfferPageViewModel.offer.offerName,
+            _retrieveOfferPageViewModel.offer.orderName,
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
@@ -66,7 +66,7 @@ class RetrieveOfferPage extends StatelessWidget {
 
           /// Offer Description
           Text(
-            _retrieveOfferPageViewModel.offer.offerDescription,
+            _retrieveOfferPageViewModel.offer.orderDescription,
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
@@ -82,7 +82,7 @@ class RetrieveOfferPage extends StatelessWidget {
 
           /// Offer Value
           Text(
-            _retrieveOfferPageViewModel.offer.offerValue,
+            _retrieveOfferPageViewModel.offer.orderValue,
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
