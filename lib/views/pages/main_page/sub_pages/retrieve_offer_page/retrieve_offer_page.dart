@@ -7,16 +7,17 @@ import 'package:aphive_pos/views/pages/main_page/sub_pages/home_page/home_page.d
 import 'package:aphive_pos/views/pages/main_page/sub_pages/retrieve_offer_page/retrieve_offer_page_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';
-import 'package:get/get.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RetrieveOrderPage extends StatelessWidget {
   static const tag = 'RetrieveOrderPage';
 
-  final RetrieveOfferPageViewModel _retrieveOfferPageViewModel = Get.find();
-  final MainPageCubit _mainPageCubit = Get.find();
+  final RetrieveOfferPageViewModel _retrieveOfferPageViewModel = RetrieveOfferPageViewModel();
 
   @override
   Widget build(BuildContext context) {
+    MainPageCubit _mainPageCubit = context.read<MainPageCubit>();
+
     /// Container for padding
     return Container(
       padding: EdgeInsets.symmetric(

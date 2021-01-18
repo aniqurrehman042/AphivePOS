@@ -8,17 +8,18 @@ import 'package:aphive_pos/views/pages/main_page/sub_pages/retrieve_offer_page/r
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/size_extension.dart';
-import 'package:get/get.dart';
 
 import 'side_bar.dart';
 import 'sub_pages/home_page/home_page.dart';
 import 'sub_pages/reward_points_page/reward_points_page.dart';
 
 class MainPage extends StatelessWidget {
-  MainPageCubit _mainPageCubit = Get.find();
+
 
   @override
   Widget build(BuildContext context) {
+    MainPageCubit _mainPageCubit = context.read<MainPageCubit>();
+
     return Scaffold(
       resizeToAvoidBottomPadding: false,
 

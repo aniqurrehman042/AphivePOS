@@ -1,5 +1,4 @@
 import 'package:aphive_pos/cubits/home_page_cubit.dart';
-import 'package:aphive_pos/theme/decorations.dart';
 import 'package:aphive_pos/theme/theme_colors.dart';
 import 'package:aphive_pos/utils/dialog_utils.dart';
 import 'package:aphive_pos/views/global/app_drop_down.dart';
@@ -9,7 +8,6 @@ import 'package:aphive_pos/views/pages/main_page/sub_pages/home_page/home_page_v
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/size_extension.dart';
-import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   static const tag = 'HomePage';
@@ -17,11 +15,12 @@ class HomePage extends StatelessWidget {
   /// padding of the content of events table
   final tableContentHorizontalPadding = 20.w;
 
-  final HomePageViewModel _homePageViewModel = Get.find();
-  final HomePageCubit _homePageCubit = Get.find();
+  final HomePageViewModel _homePageViewModel = HomePageViewModel();
 
   @override
   Widget build(BuildContext context) {
+    HomePageCubit _homePageCubit = context.read<HomePageCubit>();
+
     return BlocBuilder<HomePageCubit, HomePageState>(
       builder: (context, homePageState) => Container(
         padding: EdgeInsets.symmetric(
@@ -150,7 +149,6 @@ class HomePage extends StatelessWidget {
             /// Headings Underline
             Row(
               children: [
-
                 /// Divider
                 Expanded(
                   child: Container(
@@ -180,7 +178,6 @@ class HomePage extends StatelessWidget {
                   color: index % 2 == 0 ? Colors.white : lightGrey,
                   child: Row(
                     children: [
-
                       /// Event Id value field
                       Expanded(
                         /// Left padding for event id

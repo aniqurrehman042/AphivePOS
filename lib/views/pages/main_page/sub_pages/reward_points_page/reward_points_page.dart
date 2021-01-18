@@ -10,17 +10,17 @@ import 'package:aphive_pos/views/pages/main_page/sub_pages/reward_points_page/re
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/size_extension.dart';
-import 'package:get/get.dart';
 
 class RewardPointsPage extends StatelessWidget {
   static const tag = 'RewardPointsPage';
 
-  final RewardPointsPageCubit _rewardPointsPageCubit = Get.find();
-  final RewardPointsPageViewModel _rewardPointsPageViewModel = Get.find();
-  final MainPageCubit _mainPageCubit = Get.find();
+  final RewardPointsPageViewModel _rewardPointsPageViewModel = RewardPointsPageViewModel();
 
   @override
   Widget build(BuildContext context) {
+    MainPageCubit _mainPageCubit = context.read<MainPageCubit>();
+    RewardPointsPageCubit _rewardPointsPageCubit = context.read<RewardPointsPageCubit>();
+
     return BlocBuilder<RewardPointsPageCubit, RewardPointsPageState>(
       builder: (context, rewardPointsPageState) =>
 

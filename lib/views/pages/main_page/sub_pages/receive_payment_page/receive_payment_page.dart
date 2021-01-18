@@ -5,16 +5,16 @@ import 'package:aphive_pos/views/global/bordered_text_field.dart';
 import 'package:aphive_pos/views/global/square_button.dart';
 import 'package:aphive_pos/views/pages/main_page/sub_pages/home_page/home_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/size_extension.dart';
-import 'package:get/get.dart';
 
 class ReceivePaymentPage extends StatelessWidget {
   static const tag ='ReceivePaymentPage';
 
-  final MainPageCubit _mainPageCubit = Get.find();
-
   @override
   Widget build(BuildContext context) {
+    MainPageCubit _mainPageCubit = context.read<MainPageCubit>();
+
     return Container(
       padding: EdgeInsets.symmetric(
         horizontal: 200.r,

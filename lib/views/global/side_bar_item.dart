@@ -4,7 +4,6 @@ import 'package:aphive_pos/theme/theme_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/size_extension.dart';
-import 'package:get/get.dart';
 
 class SideBarItem extends StatelessWidget {
   SideBarItem({
@@ -12,18 +11,19 @@ class SideBarItem extends StatelessWidget {
     this.pageTag,
   });
 
-  final MainPageCubit _mainPageCubit = Get.find();
   final String title;
   final String pageTag;
 
   @override
   Widget build(BuildContext context) {
+    MainPageCubit _mainPageCubit = context.read<MainPageCubit>();
+
     return BlocBuilder<MainPageCubit, MainPageState>(
       builder: (context, state) =>
 
       /// Material required for inkwell ripple effect
           Material(
-        color: _mainPageCubit.state.currentPage == pageTag
+        color: state.currentPage == pageTag
             ? accentPurple
             : Colors.transparent,
 
@@ -36,7 +36,7 @@ class SideBarItem extends StatelessWidget {
               bottom: 22.r,
               left: 70.r,
             ),
-            decoration: _mainPageCubit.state.currentPage == pageTag
+            decoration: state.currentPage == pageTag
                 ? AppDecorations.getActiveMenuItemBoxDecoration()
                 : null,
             child: Text(
