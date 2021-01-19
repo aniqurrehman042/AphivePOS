@@ -1,6 +1,6 @@
 import 'package:aphive_pos/cubits/main_page_cubit.dart';
-import 'package:aphive_pos/theme/decorations.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_decorations.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/size_extension.dart';

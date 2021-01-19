@@ -1,8 +1,12 @@
+import 'package:aphive_pos/constants.dart';
 import 'package:aphive_pos/cubits/main_page_cubit.dart';
 import 'package:aphive_pos/cubits/reward_points_page_cubit.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
+import 'package:aphive_pos/theme/app_dimensions.dart';
+import 'package:aphive_pos/theme/app_text_styles.dart';
 import 'package:aphive_pos/utils/dialog_utils.dart';
 import 'package:aphive_pos/views/global/app_drop_down.dart';
+import 'package:aphive_pos/views/global/app_sized_box.dart';
 import 'package:aphive_pos/views/global/bordered_text_field.dart';
 import 'package:aphive_pos/views/global/square_button.dart';
 import 'package:aphive_pos/views/pages/main_page/sub_pages/home_page/home_page.dart';
@@ -26,22 +30,16 @@ class RewardPointsPage extends StatelessWidget {
 
           /// Container for padding
           Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 200.r,
-          vertical: 100.r,
-        ),
+        padding: AppDimensions.getRewardPointsPagePadding(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
               'Reward Aphive points',
-              style: TextStyle(
-                fontSize: 56.nsp,
-                color: primaryBlue,
-              ),
+              style: AppTextStyles.getExtraLargeBlueTextStyle(),
             ),
 
-            SizedBox(height: 80.h),
+            AppSizedBox.height8(),
 
             /// Points Drop Down
             AppDropDown(
@@ -53,7 +51,7 @@ class RewardPointsPage extends StatelessWidget {
               width: 700.w,
             ),
 
-            SizedBox(height: 60.h),
+            AppSizedBox.height6(),
 
             /// Note Text Field
             BorderedTextField(
@@ -62,20 +60,20 @@ class RewardPointsPage extends StatelessWidget {
               width: 700.w,
             ),
 
-            SizedBox(height: 80.h),
+            AppSizedBox.height8(),
 
             /// Generate Qr code button
             SquareButton(
               title: 'Generate QR code',
               color: primaryBlue,
-              width: 700.nsp,
+              width: AppDimensions.qrDialogWidgetWidth,
               fontSize: 34.nsp,
               onTap: () {
                 showDialog(
                   context: context,
                   builder: (context) => DialogUtils.getQrDialog(
                     context: context,
-                    id: 'ABC12345XYZ',
+                    id: AppConstants.appId,
                       onQrClick: () {
                         Navigator.of(context).pop();
                         showDialog(

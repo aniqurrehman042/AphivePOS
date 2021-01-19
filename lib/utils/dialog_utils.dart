@@ -1,7 +1,7 @@
 import 'package:aphive_pos/data/models/event.dart';
-import 'package:aphive_pos/theme/decorations.dart';
-import 'package:aphive_pos/theme/text_styles.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_decorations.dart';
+import 'package:aphive_pos/theme/app_text_styles.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:aphive_pos/views/global/bordered_text_field.dart';
 import 'package:aphive_pos/views/global/default_button.dart';
 import 'package:aphive_pos/views/global/square_button.dart';

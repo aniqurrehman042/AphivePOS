@@ -1,4 +1,4 @@
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';
 
@@ -23,6 +23,12 @@ class AppTextStyles {
         fontSize: fontSize,
       );
 
+  static TextStyle getSearchBoxTextStyle() => TextStyle(
+        color: primaryBlue,
+        fontSize: 32.nsp,
+        fontWeight: FontWeight.w700,
+      );
+
   static TextStyle getEventDetailsTextStyle() => TextStyle(
         fontSize: 38.nsp,
       );
@@ -34,49 +40,54 @@ class AppTextStyles {
       );
 
   static TextStyle getNormalTextStyle() => TextStyle(
-    fontSize: 38.nsp,
-  );
+        fontSize: 38.nsp,
+      );
 
   static TextStyle getLargeTextStyle() => TextStyle(
-    fontSize: 52.nsp,
-  );
+        fontSize: 52.nsp,
+      );
 
   static TextStyle getLargeBlueTextStyle() => TextStyle(
-    fontSize: 52.nsp,
+        fontSize: 52.nsp,
+        color: primaryBlue,
+      );
+
+  static TextStyle getExtraLargeBlueTextStyle() => TextStyle(
+    fontSize: 56.nsp,
     color: primaryBlue,
   );
 
   static TextStyle getNormalBlueTextStyle() => TextStyle(
-    fontSize: 38.nsp,
-    color: primaryBlue,
-  );
+        fontSize: 38.nsp,
+        color: primaryBlue,
+      );
 
   static TextStyle getSmallTextStyle() => TextStyle(
-    fontSize: 33.nsp,
-  );
+        fontSize: 33.nsp,
+      );
 
   static TextStyle getExtraSmallTextStyle() => TextStyle(
-    fontSize: 28.nsp,
-  );
+        fontSize: 28.nsp,
+      );
 
   static TextStyle getExtraSmallBlueTextStyle() => TextStyle(
-    fontSize: 28.nsp,
-    color: primaryBlue,
-  );
+        fontSize: 28.nsp,
+        color: primaryBlue,
+      );
 
   static TextStyle getSemiNormalTextStyle() => TextStyle(
-    fontSize: 35.nsp,
-  );
+        fontSize: 35.nsp,
+      );
 
   static TextStyle getSmallBlueHeadingTextStyle() => TextStyle(
-    fontSize: 33.nsp,
-    fontWeight: FontWeight.w700,
-    color: primaryBlue,
-  );
+        fontSize: 33.nsp,
+        fontWeight: FontWeight.w700,
+        color: primaryBlue,
+      );
 
   static TextStyle getSmallGreenHeadingTextStyle() => TextStyle(
-    fontSize: 32.nsp,
-    fontWeight: FontWeight.w700,
-    color: accentGreen,
-  );
+        fontSize: 32.nsp,
+        fontWeight: FontWeight.w700,
+        color: accentGreen,
+      );
 }

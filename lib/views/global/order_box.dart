@@ -1,6 +1,6 @@
 import 'package:aphive_pos/data/models/order.dart';
-import 'package:aphive_pos/theme/text_styles.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_text_styles.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:aphive_pos/utils/dialog_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';

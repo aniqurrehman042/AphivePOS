@@ -1,5 +1,5 @@
 import 'package:aphive_pos/cubits/main_page_cubit.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:aphive_pos/utils/dialog_utils.dart';
 import 'package:aphive_pos/views/global/default_button.dart';
 import 'package:aphive_pos/views/pages/main_page/sub_pages/offers_page/offers_page.dart';

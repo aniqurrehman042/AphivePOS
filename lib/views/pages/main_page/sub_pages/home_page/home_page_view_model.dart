@@ -1,5 +1,7 @@
 import 'package:aphive_pos/cubits/home_page_cubit.dart';
 import 'package:aphive_pos/data/models/event.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
+import 'package:flutter/material.dart';
 
 class HomePageViewModel {
   List<String> typesOfEvents = [
@@ -130,4 +132,8 @@ class HomePageViewModel {
       field6: 'Field 6',
     ),
   ];
+
+  getTableRowColor(int index) {
+    return index % 2 == 0 ? Colors.white : lightGrey;
+  }
 }

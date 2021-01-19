@@ -1,19 +1,20 @@
+import 'package:aphive_pos/constants.dart';
 import 'package:aphive_pos/cubits/home_page_cubit.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_dimensions.dart';
+import 'package:aphive_pos/theme/app_text_styles.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:aphive_pos/utils/dialog_utils.dart';
 import 'package:aphive_pos/views/global/app_drop_down.dart';
+import 'package:aphive_pos/views/global/app_sized_box.dart';
 import 'package:aphive_pos/views/global/bordered_text_field.dart';
 import 'package:aphive_pos/views/global/default_button.dart';
+import 'package:aphive_pos/views/global/horizontal_divider.dart';
 import 'package:aphive_pos/views/pages/main_page/sub_pages/home_page/home_page_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/size_extension.dart';
 
 class HomePage extends StatelessWidget {
   static const tag = 'HomePage';
-
-  /// padding of the content of events table
-  final tableContentHorizontalPadding = 20.w;
 
   final HomePageViewModel _homePageViewModel = HomePageViewModel();
 
@@ -23,10 +24,7 @@ class HomePage extends StatelessWidget {
 
     return BlocBuilder<HomePageCubit, HomePageState>(
       builder: (context, homePageState) => Container(
-        padding: EdgeInsets.symmetric(
-          horizontal: 120.w,
-          vertical: 40.h,
-        ),
+        padding: AppDimensions.getHomePagePadding(),
 
         /// Page Content
         child: Column(
@@ -34,15 +32,11 @@ class HomePage extends StatelessWidget {
           children: [
             /// Search Section Heading
             Text(
-              'Search event',
-              style: TextStyle(
-                color: primaryBlue,
-                fontSize: 32.nsp,
-                fontWeight: FontWeight.w700,
-              ),
+              AppConstants.searchEvent,
+              style: AppTextStyles.getSearchBoxTextStyle(),
             ),
 
-            SizedBox(height: 30.r),
+            AppSizedBox.height3(),
 
             /// Search Section Controls
             Row(
@@ -53,114 +47,101 @@ class HomePage extends StatelessWidget {
                   value: homePageState.selectedEventType,
                   onChanged: (value) =>
                       _homePageCubit.updateSelectedEventType(value),
-                  hintText: 'Type of event',
+                  hintText: AppConstants.typeOfEvent,
                   items: _homePageViewModel.typesOfEvents,
                 ),
 
-                SizedBox(width: 60.w),
+                AppSizedBox.width6(),
 
                 /// From Text Field
                 BorderedTextField(
-                  hint: 'From',
+                  hint: AppConstants.from,
                   inputType: TextInputType.datetime,
                 ),
 
-                SizedBox(width: 20.w),
+                AppSizedBox.width2(),
 
                 /// To Text Field
                 BorderedTextField(
-                  hint: 'To',
+                  hint: AppConstants.to,
                   inputType: TextInputType.datetime,
                 ),
 
-                SizedBox(width: 80.w),
+                AppSizedBox.width8(),
 
                 /// Search Button
                 DefaultButton(
                   color: primaryBlue,
                   onTap: () {},
-                  title: 'Search',
+                  title: AppConstants.search,
                 ),
               ],
             ),
 
-            SizedBox(height: 80.r),
+            AppSizedBox.height8(),
 
             /// Table Headings
             Row(
               children: [
                 Expanded(
                   child: Text(
-                    'Event ID',
-                    style: TextStyle(
-                      fontSize: 34.nsp,
-                    ),
+                    AppConstants.eventId,
+                    style: AppTextStyles.getSmallTextStyle(),
                   ),
                 ),
-                SizedBox(width: 5.w),
+                AppSizedBox.width05(),
                 Expanded(
                   child: Text(
-                    'Event Type',
-                    style: TextStyle(
-                      fontSize: 34.nsp,
-                    ),
+                    AppConstants.eventType,
+                    style: AppTextStyles.getSmallTextStyle(),
                   ),
                 ),
-                SizedBox(width: 5.w),
+                AppSizedBox.width05(),
                 Expanded(
                   child: Text(
-                    'Quantity',
-                    style: TextStyle(
-                      fontSize: 34.nsp,
-                    ),
+                    AppConstants.quantity,
+                    style: AppTextStyles.getSmallTextStyle(),
                   ),
                 ),
-                SizedBox(width: 5.w),
+                AppSizedBox.width05(),
                 Expanded(
                   child: Text(
-                    'Date',
-                    style: TextStyle(
-                      fontSize: 34.nsp,
-                    ),
+                    AppConstants.date,
+                    style: AppTextStyles.getSmallTextStyle(),
                   ),
                 ),
-                SizedBox(width: 5.w),
+                AppSizedBox.width05(),
                 Expanded(
                   child: Text(
-                    'User*',
-                    style: TextStyle(
-                      fontSize: 34.nsp,
-                    ),
+                    AppConstants.user,
+                    style: AppTextStyles.getSmallTextStyle(),
                   ),
                 ),
-                SizedBox(width: tableContentHorizontalPadding),
+                SizedBox(width: AppDimensions.tableContentHorizontalPadding),
 
                 /// Hidden Select Button for layout positioning
                 DefaultButton(
-                  title: 'Select',
+                  title: AppConstants.select,
                   isSqueezed: true,
                   isHidden: true,
                 ),
               ],
             ),
 
-            SizedBox(height: 10.r),
+            AppSizedBox.height1(),
 
             /// Headings Underline
             Row(
               children: [
                 /// Divider
                 Expanded(
-                  child: Container(
-                    color: lightGrey,
-                    height: 2.0,
-                  ),
+                  child: HorizontalDivider(),
                 ),
-                SizedBox(width: 20.w),
+                AppSizedBox.width2(),
 
                 /// Hidden Select Button for layout positioning
                 DefaultButton(
-                  title: 'Select',
+                  title: AppConstants.select,
                   isSqueezed: true,
                   isHidden: true,
                 )
@@ -171,86 +152,70 @@ class HomePage extends StatelessWidget {
             Expanded(
               child: ListView.builder(
                 itemCount: _homePageViewModel.events.length,
-                itemBuilder: (context, index) =>
 
-                    /// Container for background color
-                    Container(
-                  color: index % 2 == 0 ? Colors.white : lightGrey,
+                /// Container for background color
+                itemBuilder: (context, index) => Container(
+                  color: _homePageViewModel.getTableRowColor(index),
                   child: Row(
                     children: [
                       /// Event Id value field
                       Expanded(
                         /// Left padding for event id
                         child: Padding(
-                          padding: EdgeInsets.only(
-                              left: tableContentHorizontalPadding),
+                          padding: AppDimensions.getTableContentHorizontalPadding(),
                           child: Text(
                             _homePageViewModel.events[index].eventId,
-                            style: TextStyle(
-                              fontSize: 34.nsp,
-                            ),
+                            style: AppTextStyles.getSmallTextStyle(),
                           ),
                         ),
                       ),
-                      SizedBox(width: 5.w),
+                      AppSizedBox.width05(),
 
                       /// Event type value field
                       Expanded(
                         child: Text(
                           _homePageViewModel.events[index].eventType,
-                          style: TextStyle(
-                            fontSize: 34.nsp,
-                          ),
+                          style: AppTextStyles.getSmallTextStyle(),
                         ),
                       ),
-                      SizedBox(width: 5.w),
+                      AppSizedBox.width05(),
 
                       /// Quantity value field
                       Expanded(
                         child: Text(
                           _homePageViewModel.events[index].quantity,
-                          style: TextStyle(
-                            fontSize: 34.nsp,
-                          ),
+                          style: AppTextStyles.getSmallTextStyle(),
                         ),
                       ),
-                      SizedBox(width: 5.w),
+                      AppSizedBox.width05(),
 
                       /// date value field
                       Expanded(
                         child: Text(
                           _homePageViewModel.events[index].date,
-                          style: TextStyle(
-                            fontSize: 34.nsp,
-                          ),
+                          style: AppTextStyles.getSmallTextStyle(),
                         ),
                       ),
-                      SizedBox(width: 5.w),
+                      AppSizedBox.width05(),
 
                       /// User value field
                       Expanded(
                         /// Right padding for user
                         child: Padding(
-                          padding: EdgeInsets.only(right: 20.w),
+                          padding: AppDimensions.getPaddingR2w(),
                           child: Text(
                             _homePageViewModel.events[index].user,
-                            style: TextStyle(
-                              fontSize: 34.nsp,
-                            ),
+                            style: AppTextStyles.getSmallTextStyle(),
                           ),
                         ),
                       ),
                       Container(
                         color: Colors.white,
-                        padding: EdgeInsets.only(
-                          left: tableContentHorizontalPadding,
-                          top: 10.r,
-                          bottom: 10.r,
-                        ),
+                        padding: AppDimensions.getTableButtonPadding(),
 
                         /// Select Button
                         child: DefaultButton(
-                          title: 'Select',
+                          title: AppConstants.select,
                           color: accentPurple,
                           isSqueezed: true,
                           onTap: () {

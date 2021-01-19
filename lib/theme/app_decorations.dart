@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'theme_colors.dart';
+import 'app_colors.dart';
 
 class AppDecorations {
   static BoxDecoration getActiveMenuItemBoxDecoration() {

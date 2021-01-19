@@ -1,4 +1,4 @@
-import 'package:aphive_pos/theme/decorations.dart';
+import 'package:aphive_pos/theme/app_decorations.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/size_extension.dart';
 

@@ -1,7 +1,9 @@
 import 'package:aphive_pos/cubits/main_page_cubit.dart';
-import 'package:aphive_pos/theme/text_styles.dart';
-import 'package:aphive_pos/theme/theme_colors.dart';
+import 'package:aphive_pos/theme/app_dimensions.dart';
+import 'package:aphive_pos/theme/app_text_styles.dart';
+import 'package:aphive_pos/theme/app_colors.dart';
 import 'package:aphive_pos/utils/dialog_utils.dart';
+import 'package:aphive_pos/views/global/app_sized_box.dart';
 import 'package:aphive_pos/views/global/default_button.dart';
 import 'package:aphive_pos/views/pages/main_page/sub_pages/home_page/home_page.dart';
 import 'package:aphive_pos/views/pages/main_page/sub_pages/retrieve_offer_page/retrieve_offer_page_view_model.dart';
@@ -20,10 +22,7 @@ class RetrieveOrderPage extends StatelessWidget {
 
     /// Container for padding
     return Container(
-      padding: EdgeInsets.symmetric(
-        horizontal: 300.r,
-        vertical: 120.r,
-      ),
+      padding: AppDimensions.getRetrieveOfferPagePadding(),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -54,7 +53,7 @@ class RetrieveOrderPage extends StatelessWidget {
             ],
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Offer Details
           /// Offer Name
@@ -63,7 +62,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Offer Description
           Text(
@@ -71,7 +70,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Offer Quantity
           Text(
@@ -79,7 +78,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Offer Value
           Text(
@@ -87,7 +86,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Offer Fulfillment Period
           Text(
@@ -95,7 +94,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Offer Refundable Status
           Text(
@@ -103,7 +102,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 30.h),
+          AppSizedBox.height3(),
 
           /// Username
           Text(
@@ -111,7 +110,7 @@ class RetrieveOrderPage extends StatelessWidget {
             style: AppTextStyles.getSmallTextStyle(),
           ),
 
-          SizedBox(height: 60.h),
+          AppSizedBox.height6(),
 
           /// Buttons Area
           Row(
@@ -137,7 +136,7 @@ class RetrieveOrderPage extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(width: 80.w),
+              AppSizedBox.width8(),
               Expanded(
                 /// Reject Button
                 child: DefaultButton(
@@ -159,7 +158,7 @@ class RetrieveOrderPage extends StatelessWidget {
                   },
                 ),
               ),
-              SizedBox(width: 80.w),
+              AppSizedBox.width8(),
               Expanded(
                 /// Return Button
                 child: DefaultButton(
